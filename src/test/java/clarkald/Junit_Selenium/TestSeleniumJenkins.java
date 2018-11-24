@@ -14,7 +14,7 @@ class TestSeleniumJenkins {
 	static ChromeOptions chromeOptions = new ChromeOptions();
 	
 	// Headless Toggle
-		static boolean headlessToggle = false;
+		static boolean headlessToggle = true;
 
 		public static String getArgs(boolean headlessOption) {
 			if (headlessOption) {
