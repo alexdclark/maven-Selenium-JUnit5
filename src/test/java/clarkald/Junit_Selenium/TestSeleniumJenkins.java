@@ -95,7 +95,7 @@ class TestSeleniumJenkins {
 
 
 			else{
-				System.Out.println("It is above the freezing point.");
+				System.out.println("It is above the freezing point.");
 				return;
 			}			
 
