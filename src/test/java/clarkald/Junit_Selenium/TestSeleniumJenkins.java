@@ -2,6 +2,8 @@ package clarkald.Junit_Selenium;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -67,5 +69,36 @@ class TestSeleniumJenkins {
 			System.out.println("This was built from the Github Repo!");
 		}
 	
+
+		@Test
+		public void aboveFreezing(){
+			chromeOptions.addArguments(getArgs(headlessToggle));
+
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\alexd\\Documents\\Development\\chromedriver.exe");
+
+			// WebDriver Headless/Non-Headless
+			WebDriver driver = new ChromeDriver(chromeOptions);
+
+			// Navigating to Google and searching for weather for city entered by user
+			driver.get("http://www.google.com");
+			driver.findElement(By.name("q")).sendKeys("Cookeville Weather", Keys.RETURN);
+
+			String currentTemp = driver.findElement(By.id("wob_tm")).getText().toString();
+
+			driver.close();
+
+			int tempInt = Integer.parseInt(currentTemp);
+
+			if (tempInt <32){
+				fail("It is below freezing!");
+			}
+
+
+			else{
+				System.Out.println("It is above the freezing point.");
+				return;
+			}			
+
+		}
 
 }
