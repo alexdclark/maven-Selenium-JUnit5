@@ -64,6 +64,7 @@ class TestSeleniumJenkins {
 			System.out.println("Weather Conditions " + currentCondition);
 			System.out.println("Temp: " + currentTemp);
 			System.out.println("Wind Spped: " + currentWind);
+			System.out.println("This was built from the Github Repo!");
 		}
 	
 
