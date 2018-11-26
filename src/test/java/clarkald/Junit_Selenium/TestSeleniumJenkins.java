@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 class TestSeleniumJenkins {
 
 	static ChromeOptions chromeOptions = new ChromeOptions();
+	String chromeDriverPath ="C:\\Users\\clarkald\\Documents\\Development";
 	
 	// Headless Toggle
 		static boolean headlessToggle = true;
@@ -34,7 +35,7 @@ class TestSeleniumJenkins {
 			// Determining arguments for Chrome Driver
 			chromeOptions.addArguments(getArgs(headlessToggle));
 
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\alexd\\Documents\\Development\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
 			// WebDriver Headless/Non-Headless
 			WebDriver driver = new ChromeDriver(chromeOptions);
@@ -74,7 +75,7 @@ class TestSeleniumJenkins {
 		public void aboveFreezing(){
 			chromeOptions.addArguments(getArgs(headlessToggle));
 
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\alexd\\Documents\\Development\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
 			// WebDriver Headless/Non-Headless
 			WebDriver driver = new ChromeDriver(chromeOptions);
