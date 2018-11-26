@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 class TestSeleniumJenkins {
 
 	static ChromeOptions chromeOptions = new ChromeOptions();
-	String chromeDriverPath ="C:\\Users\\clarkald\\Documents\\Development";
+	String chromeDriverPath ="C:\\Users\\clarkald\\Documents\\Development\\chromedriver";
 	
 	// Headless Toggle
 		static boolean headlessToggle = true;
