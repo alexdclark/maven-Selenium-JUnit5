@@ -72,7 +72,7 @@ class TestSeleniumJenkins {
 	
 
 		@Test
-		public void above20Degree(){
+		public void aboveFreezing(){
 			chromeOptions.addArguments(getArgs(headlessToggle));
 
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
@@ -90,8 +90,8 @@ class TestSeleniumJenkins {
 
 			int tempInt = Integer.parseInt(currentTemp);
 
-			if (tempInt <20){
-				fail("It is below 20 degrees!");
+			if (tempInt <32){
+				fail("It is below freezing!");
 			}
 
 
