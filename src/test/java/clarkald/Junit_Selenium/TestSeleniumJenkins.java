@@ -17,7 +17,7 @@ class TestSeleniumJenkins {
 	String chromeDriverPath ="C:\\Users\\clarkald\\Documents\\Development\\chromedriver.exe";
 	
 	// Headless Toggle
-		static boolean headlessToggle = false;
+		static boolean headlessToggle = true;
 
 		
 		//Function that returns the correct Chrome Argument depending on headlessToggle
