@@ -73,6 +73,11 @@ class TestSeleniumJenkins {
 		}
 	
 		@Test
+		public void failOnPurpose(){
+			fail("This test isn't implemented yet. I'm demonstrating what a failure looks like. ");
+		}
+
+		@Test
 		public void showColumn() {
 			// Determining arguments for Chrome Driver
 			chromeOptions.addArguments(getArgs(headlessToggle));
