@@ -17,7 +17,7 @@ class TestSeleniumJenkins {
 	String chromeDriverPath ="C:\\Users\\clarkald\\Documents\\Development\\chromedriver.exe";
 	
 	// Headless Toggle
-		static boolean headlessToggle = true;
+		static boolean headlessToggle = false;
 
 		
 		//Function that returns the correct Chrome Argument depending on headlessToggle
@@ -47,8 +47,9 @@ class TestSeleniumJenkins {
 			driver.get("https://jwatsondev.github.io/ng-prime-testing/");
 			
 			//Select the ID Column then clicking ID Column Button to hide column
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[3]/span")).click();
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[1]")).click();
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[3]")).click();
+			
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[2]/label")).click();
 			
 			//Attempting to target the ID Column which throws an exception as expected. If not exception is thrown test fails. 
 			try
@@ -58,7 +59,7 @@ class TestSeleniumJenkins {
 			}
 			catch(Exception e) {
 				
-				//System.out.println("Exception was thrown as expected since column was not visable");
+				System.out.println("Exception was thrown as expected since column was not visable");
 				driver.close();
 				return;
 			}
@@ -72,11 +73,6 @@ class TestSeleniumJenkins {
 			
 		}
 	
-		@Test
-		public void failOnPurpose(){
-			fail("This test isn't implemented yet. I'm demonstrating what a failure looks like. ");
-		}
-
 		@Test
 		public void showColumn() {
 			// Determining arguments for Chrome Driver
@@ -96,9 +92,9 @@ class TestSeleniumJenkins {
 			
 			
 			//Select the ID Column then clicking ID Column Button to hide column then clicking it again to show the column
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[3]/span")).click();
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[1]")).click();
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[1]")).click();
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[3]")).click();
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[2]/label")).click();
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[2]/label")).click();
 			
 			//Checking whether ID Column is displayed if it isn't on the page an exception is thrown and I fail the test. 
 			try
@@ -139,14 +135,14 @@ class TestSeleniumJenkins {
 			driver.get("https://jwatsondev.github.io/ng-prime-testing/");
 			
 			//Hiding the ID Column by clicking the column dropdown then clicking ID
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[3]/span")).click();
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[1]")).click();
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[2]/label")).click();
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[2]")).click();
 			
 			//Using the search box to search for columns with "id" in name
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[4]/div[1]/div[2]/input")).sendKeys("id");
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[4]/div[1]/div[2]/input")).sendKeys("id");
 			
 			//Selecting ID Column result
-			driver.findElement(By.xpath("/html/body/app-root/app-prime/p-table[1]/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[1]")).click();
+			driver.findElement(By.xpath("/html/body/app-root/app-prime/div/p-table/div/div[1]/div/p-multiselect/div/div[4]/div[2]/ul/li[2]/label")).click();
 			
 			//Verifying that ID Column is displayed if it isn't an exception is thrown 
 			try
