@@ -58,7 +58,7 @@ class TestSeleniumJenkins {
 			}
 			catch(Exception e) {
 				
-				System.out.println("Exception was thrown as expected since column was not visable");
+				//System.out.println("Exception was thrown as expected since column was not visable");
 				driver.close();
 				return;
 			}
